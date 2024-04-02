@@ -1,34 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import All_Beers from './components/All_Beers/All_Beers'
+import beers from './components/Beers/Beers'
+import Beers_Available from './components/Beers_Available/Beers_Available'
+import Beers_Styles from './components/Beers_Styles/Beers_Styles'
+import Red_Ipa from './components/Red_Ipa/Red_Ipa'
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div >
+    <p>Carta Cervezas</p>
+     <All_Beers beers={beers}/>
+     <p>Cervezas disponibles</p>
+     <Beers_Available beers={beers}/>
+     <p>Cervezas Ipa y Red</p>
+     <Red_Ipa beers={beers}/>
+     <p>Estilos de cervezas</p>
+     <Beers_Styles beers={beers}/>
+    </div>
   )
 }
 
