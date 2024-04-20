@@ -1,33 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import Table from './components/table/Table';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const netIncomes = [
+    { brand: 'McDonalds', income: 1291283 },
+    { brand: 'Burger King', income: 1927361 },
+    { brand: 'KFC', income: 1098463 }
+  ];
+  const total = netIncomes.reduce((num, i) => {
+  return num + i.income
+  }, 0);
+  const average = (total / netIncomes.length).toFixed();
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Table netIncomes={netIncomes}/>
+      <p>Promedios de los ingresos netos :{average}</p>
     </>
   )
 }
