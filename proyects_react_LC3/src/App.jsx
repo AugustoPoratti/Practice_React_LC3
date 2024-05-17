@@ -1,7 +1,9 @@
 
 import './App.css'
-import All_Beers from './components/All_Beers/All_Beers'
-import beers from './components/Beers/Beers'
+import { useState } from "react";
+import NewWork from './components/newTarea/NewTarea';
+import List from './components/list/List';
+
 
 
 
@@ -9,11 +11,14 @@ import beers from './components/Beers/Beers'
 
 function App() {
 
+  const [works, setWorks] = useState([])
+
+
   return (
     <div>
-      <div>
-        <All_Beers beers={beers}/>
-     </div>
+      
+      <NewWork works={works} setWorks={setWorks}/>
+      <List works={works} setWorks={setWorks}/>
     </div>
   )
 }
