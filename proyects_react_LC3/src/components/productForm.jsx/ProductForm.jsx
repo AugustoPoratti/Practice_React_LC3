@@ -10,11 +10,12 @@ const ProductForm = ({ initialProducts, setInitialProducts }) => {
 
   const handleAddProduct = (e) => {
     if (name != "" && price != 0 && stock != 0) {
+      
       if (
-        initialProducts.some((p) => p.name.toLowerCase() === name.toLowerCase())
+        initialProducts.some((j) => j.name.toLowerCase() === name.toLowerCase())
       ) {
         const i = initialProducts.findIndex(
-          (p) => p.name.toLowerCase() === name.toLowerCase()
+          (j) => j.name.toLowerCase() === name.toLowerCase()
         );
 
         initialProducts[i].price = price;
@@ -38,6 +39,7 @@ const ProductForm = ({ initialProducts, setInitialProducts }) => {
     e.preventDefault();
 
   }
+
 }
   return (
     <div>
@@ -50,7 +52,7 @@ const ProductForm = ({ initialProducts, setInitialProducts }) => {
 
         <label htmlFor="">Stock</label>
         <input type="number" value={stock} onChange={(e) => setStock(e.target.value)} />
-        <button type='submit' onClick={handleAddProduct}>Add</button>
+        <button type='submit' onClick={handleAddProduct}>Agregar</button>
       </form>
     </div>
   )

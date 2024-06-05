@@ -27,6 +27,7 @@ function App() {
       price : 3000,
       stock: 10,
     }
+    
   ])
   return (
     <>
